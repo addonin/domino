@@ -25,12 +25,12 @@ public class Chain {
 
     public boolean fitToLeftFreeEnd(Tile tile) {
         int[] values = tile.getValues();
-        return values[0] == leftFreeEnd || values[1] == rightFreeEnd;
+        return values[0] == leftFreeEnd || values[1] == leftFreeEnd;
     }
 
     public boolean fitToRightFreeEnd(Tile tile) {
         int[] values = tile.getValues();
-        return values[0] == leftFreeEnd || values[1] == rightFreeEnd;
+        return values[0] == rightFreeEnd || values[1] == rightFreeEnd;
     }
 
     public void connectToLeftFreeEnd(Tile tile) {
