@@ -5,7 +5,10 @@ import com.igniteoutsourcing.domino.domain.Tile;
 import com.igniteoutsourcing.domino.misc.ChainComparator;
 import com.igniteoutsourcing.domino.service.impl.ChainAnalyser;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class MaxLengthChainAnalyser implements ChainAnalyser {
 
