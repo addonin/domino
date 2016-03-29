@@ -6,8 +6,6 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.11'
 }
 
-mainClassName = "com.igniteoutsourcing.domino.App"
-
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
@@ -27,5 +25,7 @@ jar {
 run {
     standardInput = System.in
 }
+
+mainClassName = "com.igniteoutsourcing.domino.App"
 
 
