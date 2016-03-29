@@ -1,4 +1,4 @@
-package com.igniteoutsourcing.domino.service.impl;
+package com.igniteoutsourcing.domino.service;
 
 public interface InputValidator {
 

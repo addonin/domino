@@ -1,8 +1,8 @@
-package com.igniteoutsourcing.domino.service;
+package com.igniteoutsourcing.domino.service.impl;
 
 import com.igniteoutsourcing.domino.domain.Tile;
 import com.igniteoutsourcing.domino.repository.TilesRepository;
-import com.igniteoutsourcing.domino.service.impl.TilePicker;
+import com.igniteoutsourcing.domino.service.TilePicker;
 
 import java.util.List;
 

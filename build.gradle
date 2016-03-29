@@ -2,12 +2,10 @@ apply plugin: "java"
 apply plugin: "application"
 apply plugin: "idea"
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.11'
-}
-
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
+
+mainClassName = "com.igniteoutsourcing.domino.App"
 
 repositories {
     mavenCentral()
@@ -18,6 +16,10 @@ dependencies {
     testCompile 'org.mockito:mockito-all:1.10.19'
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.11'
+}
+
 jar {
     manifest.attributes("Main-Class": mainClassName)
 }
@@ -25,7 +27,3 @@ jar {
 run {
     standardInput = System.in
 }
-
-mainClassName = "com.igniteoutsourcing.domino.App"
-
-

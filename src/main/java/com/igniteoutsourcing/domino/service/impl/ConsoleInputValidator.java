@@ -1,6 +1,6 @@
-package com.igniteoutsourcing.domino.service;
+package com.igniteoutsourcing.domino.service.impl;
 
-import com.igniteoutsourcing.domino.service.impl.InputValidator;
+import com.igniteoutsourcing.domino.service.InputValidator;
 
 public class ConsoleInputValidator implements InputValidator {
 

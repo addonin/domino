@@ -1,14 +1,15 @@
-package com.igniteoutsourcing.domino.service;
+package com.igniteoutsourcing.domino.service.impl;
 
 import com.igniteoutsourcing.domino.domain.Chain;
 import com.igniteoutsourcing.domino.domain.Tile;
 import com.igniteoutsourcing.domino.misc.ChainComparator;
-import com.igniteoutsourcing.domino.service.impl.ChainAnalyser;
+import com.igniteoutsourcing.domino.service.ChainAnalyser;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class MaxLengthChainAnalyser implements ChainAnalyser {
 
@@ -16,14 +17,15 @@ public class MaxLengthChainAnalyser implements ChainAnalyser {
     private List<Chain> chains = new ArrayList<>();
 
     public MaxLengthChainAnalyser(List<Tile> analysedTiles) {
+        if (analysedTiles == null || analysedTiles.size() == 0) {
+            throw new IllegalArgumentException("Should analyse non empty tiles list");
+        }
         this.analysedTiles = analysedTiles;
     }
 
     @Override
     public Chain analyse() {
-        for (Tile tile : analysedTiles) {
-            chains.add(composeChain(tile));
-        }
+        chains.addAll(analysedTiles.stream().map(this::composeChain).collect(Collectors.toList()));
         return findLongestChain(chains);
     }
 

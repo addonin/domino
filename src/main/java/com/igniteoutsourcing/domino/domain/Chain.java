@@ -34,12 +34,18 @@ public class Chain {
     }
 
     public void connectToLeftFreeEnd(Tile tile) {
+        if (!fitToLeftFreeEnd(tile)) {
+            throw new IllegalArgumentException("Check with fitToLeftFreeEnd(Tile tile) before!");
+        }
         tiles.add(0, tile);
         int[] values = tile.getValues();
         leftFreeEnd = (leftFreeEnd == values[0]) ? values[1] : values[0];
     }
 
     public void connectToRightFreeEnd(Tile tile) {
+        if (!fitToRightFreeEnd(tile)) {
+            throw new IllegalArgumentException("Check with fitToRightFreeEnd(Tile tile) before!");
+        }
         tiles.add(tiles.size(), tile);
         int[] values = tile.getValues();
         rightFreeEnd = (rightFreeEnd == values[0]) ? values[1] : values[0];

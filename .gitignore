@@ -1,6 +1,5 @@
-/gradle
-/lib
 /.idea
 /.gradle
+/gradle
 /build
 domino.iml
